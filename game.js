@@ -2,9 +2,9 @@ const prompt = require("prompt-sync")();
 
 console.log('Welcome to the Climate Change Awareness Game!');
 
-let score = 0;
+let score = 0;//Score
 
-function decisionScenario(question, options, correctAnswerIndex) {
+function decisionScenario(question, options, correctAnswerIndex) { //sets up the game's main ability to ask and get answers to questions, and to score them.
     console.log(question);
 
     for (let i = 0; i < options.length; i++) {
