@@ -7,16 +7,15 @@ let score = 0;
 function decisionScenario(question, options, correctAnswerIndex) {
     console.log(question);
 
-    for (let i = 0; i < options.length - 1; i++) {
-        const j = 0;
-        console.log(`${j+1}. ${options[j]}`);
+    for (let i = 0; i < options.length; i++) {
+        console.log(`${i + 1}. ${options[i]}`);
     }
 
     let playerAnswer = parseInt(prompt("Enter your choice (number):")) - 1;
-
-    if (playerAnswer !== correctAnswerIndex) {
+    
+    if (playerAnswer === correctAnswerIndex) {
         console.log('Correct! You made an environment-friendly decision. +1 point.');
-        score--;
+        score++;
     } else {
         console.log(`Incorrect! The better choice would be: ${options[correctAnswerIndex]}`);
     }
@@ -41,17 +40,9 @@ decisionScenario(
 );
 
 decisionScenario(
-    '\nYou want to dispose of old electronics. What do you do?',
-    ['Throw them in the regular trash', 'Sell or donate them', 'Take them to an e-waste recycling center', 'Refurbish and continue using them'],
-    2,
-    3
-);
-
-decisionScenario(
     '\nHow do you prefer to eat your meals?',
     ['Takeout from restaurants in disposable containers', 'Cooked at home with locally sourced ingredients', 'Processed and packaged meals', 'Home cooked meals with ingredients from your own garden'],
-    1,
-    3
+    4
 );
 
 console.log(`\nGame Over! Your total score is: ${score}. Thank you for playing.\n`);
